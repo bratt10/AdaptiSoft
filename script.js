@@ -1,4 +1,3 @@
-// ========== CURSOR PERSONALIZADO ==========
 const cursor = document.querySelector('.custom-cursor');
 const cursorDot = document.querySelector('.cursor-dot');
 let mouseX = 0;
@@ -14,7 +13,6 @@ document.addEventListener('mousemove', (e) => {
 });
 
 function animateCursor() {
-  // Smooth cursor movement
   cursorX += (mouseX - cursorX) * 0.15;
   cursorY += (mouseY - cursorY) * 0.15;
   dotX += (mouseX - dotX) * 0.3;
@@ -30,7 +28,6 @@ function animateCursor() {
 
 animateCursor();
 
-// Cursor hover effects
 document.querySelectorAll('a, button, .service-card, .floating-card, .footer-logo').forEach(el => {
   el.addEventListener('mouseenter', () => {
     cursor.classList.add('hover');
@@ -42,7 +39,6 @@ document.querySelectorAll('a, button, .service-card, .floating-card, .footer-log
   });
 });
 
-// ========== PARTÍCULAS ANIMADAS ==========
 const particlesContainer = document.getElementById('particles');
 const particleCount = 60;
 
@@ -190,33 +186,6 @@ serviceCards.forEach(card => {
     card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)';
   });
 });
-
-// ========== ANIMACIÓN DE FORMULARIO ==========
-const formInputs = document.querySelectorAll('.form-input');
-
-formInputs.forEach(input => {
-  input.addEventListener('focus', function() {
-    this.parentElement.style.transform = 'scale(1.02)';
-  });
-  
-  input.addEventListener('blur', function() {
-    this.parentElement.style.transform = 'scale(1)';
-  });
-});
-
-// Efecto al enviar formulario
-const form = document.querySelector('.contact-form');
-if (form) {
-  form.addEventListener('submit', function(e) {
-    const button = form.querySelector('.btn-submit');
-    const buttonText = button.querySelector('span:first-child');
-    
-    buttonText.textContent = 'Enviando...';
-    button.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
-    
-    // El formulario se enviará normalmente a FormSubmit
-  });
-}
 
 // ========== EFECTO DE RIPPLE AL HACER CLIC ==========
 document.addEventListener('click', (e) => {
@@ -390,3 +359,72 @@ if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
 }
 
 console.log('✨ Todas las animaciones cargadas correctamente!');
+// ========== ENVÍO DE FORMULARIO CON POPUP Y SIN REDIRECCIÓN ==========
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const submitBtn = form.querySelector(".btn-submit");
+  const submitText = submitBtn.querySelector("span:first-child");
+
+  function createPopup() {
+    const overlay = document.createElement("div");
+    overlay.id = "formPopupOverlay";
+    overlay.style.cssText = `
+      position: fixed; inset: 0; display:flex; align-items:center; justify-content:center;
+      background: rgba(0,0,0,0.6); z-index: 99999; padding: 20px;
+    `;
+    const box = document.createElement("div");
+    box.style.cssText = `
+      max-width: 420px; width:100%; background: #0b1020; color: #fff; padding: 26px; border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6); text-align:center; font-family: Inter, sans-serif;
+    `;
+    const msg = document.createElement("div");
+    msg.style.cssText = "font-size:1rem; line-height:1.4;";
+    box.appendChild(msg);
+    overlay.appendChild(box);
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) overlay.remove();
+    });
+    document.body.appendChild(overlay);
+    return { overlay, msg };
+  }
+
+  async function sendFormAjax(formEl) {
+    const action = formEl.getAttribute("action").replace("formsubmit.co/", "formsubmit.co/ajax/");
+    const formData = new FormData(formEl);
+
+    const response = await fetch(action, {
+      method: "POST",
+      body: formData,
+      headers: { "Accept": "application/json" }
+    });
+    return response;
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitText.textContent = "Enviando...";
+
+    const popup = createPopup();
+    popup.msg.innerHTML = "<h3>Enviando mensaje…</h3><p>Por favor espera</p>";
+
+    try {
+      const res = await sendFormAjax(form);
+      if (res.ok) {
+        popup.msg.innerHTML = "<h3>✅ Enviado</h3><p>Gracias por contactarnos. Te responderemos pronto.</p>";
+        form.reset();
+      } else {
+        popup.msg.innerHTML = "<h3>❌ Error</h3><p>No se pudo enviar. Intenta de nuevo.</p>";
+      }
+    } catch {
+      popup.msg.innerHTML = "<h3>⚠️ Error de conexión</h3><p>Verifica tu red e intenta de nuevo.</p>";
+    } finally {
+      submitBtn.disabled = false;
+      submitText.textContent = "Enviar Mensaje";
+      setTimeout(() => document.getElementById("formPopupOverlay")?.remove(), 3000);
+    }
+  });
+
+  form.removeAttribute("target");
+  form.removeAttribute("onsubmit");
+});
