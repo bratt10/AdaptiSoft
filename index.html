@@ -16,7 +16,7 @@
   <!-- INDICADOR DE SCROLL -->
   <div class="scroll-indicator"></div>
 
-  <!-- HEADER FLOTANTE (SIN LOGO) -->
+  <!-- HEADER FLOTANTE -->
   <header>
     <div class="header-container">
       <nav>
@@ -46,7 +46,6 @@
       </div>
     </div>
 
-    <!-- SCROLL INDICATOR -->
     <div class="scroll-down">
       <span>Scroll</span>
       <div class="scroll-arrow"></div>
@@ -64,21 +63,18 @@
           <div class="service-icon">💻</div>
           <h3>Desarrollo Web</h3>
           <p>Diseñamos sitios web modernos, rápidos y personalizados que reflejan la esencia de tu marca con tecnologías de vanguardia.</p>
-          <div class="service-hover-effect"></div>
         </div>
 
         <div class="service-card" data-aos="fade-up" data-aos-delay="200">
           <div class="service-icon">📱</div>
           <h3>Aplicaciones Móviles</h3>
           <p>Creamos apps funcionales y atractivas que conectan tu empresa con tus clientes en iOS y Android.</p>
-          <div class="service-hover-effect"></div>
         </div>
 
         <div class="service-card" data-aos="fade-up" data-aos-delay="300">
           <div class="service-icon">⚙️</div>
           <h3>Consultoría Tecnológica</h3>
           <p>Te ayudamos a optimizar tus procesos con soluciones digitales efectivas y estrategias innovadoras.</p>
-          <div class="service-hover-effect"></div>
         </div>
       </div>
     </div>
@@ -100,13 +96,13 @@
         </div>
 
         <div class="about-cards" data-aos="fade-left">
-          <div class="floating-card" data-float="1">
+          <div class="floating-card">
             <div class="card-icon">🎯</div>
             <h4>Misión</h4>
-            <p>Diseñar y desarrollar soluciones tecnológicas innovadoras y accesibles que impulsen la digitalización de pequeñas y medianas empresas, ayudándolas a mejorar su productividad y competitividad.</p>
+            <p>Diseñar y desarrollar soluciones tecnológicas innovadoras y accesibles que impulsen la digitalización de pequeñas y medianas empresas.</p>
           </div>
 
-          <div class="floating-card" data-float="2">
+          <div class="floating-card">
             <div class="card-icon">🚀</div>
             <h4>Visión</h4>
             <p>Ser una empresa líder en desarrollo de software en Colombia, reconocida por su calidad, creatividad e impacto positivo en la transformación digital de las PYMES.</p>
@@ -116,7 +112,7 @@
     </div>
   </section>
 
-  <!-- CEO SECTION -->
+  <!-- CEO -->
   <section id="ceo" class="ceo-section">
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">Nuestro Líder</h2>
@@ -132,7 +128,7 @@
           <h4 class="ceo-title">Tecnólogo - SENA</h4>
           <h4 class="ceo-role">CEO & Fundador de AdaptiSoft</h4>
           <p class="ceo-bio">
-            Apasionado por la tecnología y el desarrollo de software. Mi objetivo es ayudar a las empresas a crecer mediante soluciones digitales innovadoras, modernas y sostenibles, fomentando oportunidades para nuevos talentos.
+            Apasionado por la tecnología y el desarrollo de software. Mi objetivo es ayudar a las empresas a crecer mediante soluciones digitales innovadoras, modernas y sostenibles.
           </p>
         </div>
       </div>
@@ -145,7 +141,12 @@
       <h2 class="section-title" data-aos="fade-up">Contáctanos</h2>
       <p class="section-subtitle" data-aos="fade-up">¿Tienes un proyecto en mente? ¡Hablemos!</p>
 
-      <form action="https://formsubmit.co/adaptisoft@gmail.com" method="POST" class="contact-form" data-aos="fade-up">
+      <form 
+        action="https://formsubmit.co/adaptisoft@gmail.com" 
+        method="POST" 
+        class="contact-form" 
+        data-aos="fade-up"
+      >
         <div class="form-group">
           <input type="text" name="nombre" placeholder="Tu nombre" required class="form-input" />
           <span class="input-border"></span>
@@ -161,30 +162,34 @@
           <span class="input-border"></span>
         </div>
 
+        <!-- CAMPOS OCULTOS NECESARIOS -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Nuevo mensaje desde la web AdaptiSoft 🚀">
+        <input type="hidden" name="_next" value="https://adaptisoft.vercel.app/">
+
         <button type="submit" class="btn-submit">
           <span>Enviar Mensaje</span>
           <span class="btn-icon"></span>
         </button>
-
-        <input type="hidden" name="_captcha" value="false">
       </form>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-content">
-        <!-- LOGO EN FOOTER -->
         <div class="footer-logo-container">
           <img src="Logo.png" alt="Logo AdaptiSoft" class="footer-logo" />
         </div>
         
         <div class="social-links">
-          <a href="https://www.tiktok.com/@adaptisoft?_t=ZS-90yGSQeOQo4&_r=1" class="social-link" aria-label="TikTok">TikTok</a>
-          <a href="https://www.instagram.com/adaptisoft?igsh=ZTVjaXIxaDV1MWx5" class="social-link" aria-label="Instagram">Instagram</a>
+          <a href="https://www.tiktok.com/@adaptisoft?_t=ZS-90yGSQeOQo4&_r=1" class="social-link">TikTok</a>
+          <a href="https://www.instagram.com/adaptisoft?igsh=ZTVjaXIxaDV1MWx5" class="social-link">Instagram</a>
           <a href="mailto:adaptisoft@gmail.com" class="social-link">Correo</a>
         </div>
-        <p class="footer-copyright">&copy; 2025 AdaptiSoft. Todos los derechos reservados.</p>
+
+        <p class="footer-copy">&copy; 2025 AdaptiSoft. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
