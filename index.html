@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AdaptiSoft - Innovación Digital</title>
+  <link rel="icon" type="image/png" href="icono.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- CURSOR PERSONALIZADO -->
+  <div class="custom-cursor"></div>
+  <div class="cursor-dot"></div>
+
+  <!-- INDICADOR DE SCROLL -->
+  <div class="scroll-indicator"></div>
+
+  <!-- HEADER FLOTANTE (SIN LOGO) -->
+  <header>
+    <div class="header-container">
+      <nav>
+        <ul>
+          <li><a href="#inicio" class="nav-link">Inicio</a></li>
+          <li><a href="#servicios" class="nav-link">Servicios</a></li>
+          <li><a href="#quienes-somos" class="nav-link">Nosotros</a></li>
+          <li><a href="#ceo" class="nav-link">CEO</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="inicio" class="hero">
+    <img src="fotofondo.jpg" alt="Equipo de trabajo AdaptiSoft" class="hero-bg" />
+    <div class="hero-overlay"></div>
+    <div class="particles" id="particles"></div>
+    
+    <div class="hero-content">
+      <h1 class="hero-title">AdaptiSoft</h1>
+      <p class="hero-subtitle">Transformamos ideas en experiencias digitales inolvidables</p>
+      <div class="cta-buttons">
+        <a href="#servicios" class="btn-primary">Explorar Servicios</a>
+        <a href="#contacto" class="btn-secondary">Contactar Ahora</a>
+      </div>
+    </div>
+
+    <!-- SCROLL INDICATOR -->
+    <div class="scroll-down">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="servicios">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Nuestros Servicios</h2>
+      <p class="section-subtitle" data-aos="fade-up">Soluciones tecnológicas que impulsan tu negocio</p>
+      
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon">💻</div>
+          <h3>Desarrollo Web</h3>
+          <p>Diseñamos sitios web modernos, rápidos y personalizados que reflejan la esencia de tu marca con tecnologías de vanguardia.</p>
+          <div class="service-hover-effect"></div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-icon">📱</div>
+          <h3>Aplicaciones Móviles</h3>
+          <p>Creamos apps funcionales y atractivas que conectan tu empresa con tus clientes en iOS y Android.</p>
+          <div class="service-hover-effect"></div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon">⚙️</div>
+          <h3>Consultoría Tecnológica</h3>
+          <p>Te ayudamos a optimizar tus procesos con soluciones digitales efectivas y estrategias innovadoras.</p>
+          <div class="service-hover-effect"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIÉNES SOMOS -->
+  <section id="quienes-somos" class="quienes-somos">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">¿Quiénes Somos?</h2>
+      
+      <div class="about-container">
+        <div class="about-content" data-aos="fade-right">
+          <p class="about-description">
+            En AdaptiSoft somos una empresa joven dedicada al desarrollo de software, aplicaciones móviles y plataformas digitales diseñadas para pequeñas y medianas empresas.
+          </p>
+          <p class="about-description">
+            Nuestro objetivo es ofrecer soluciones tecnológicas prácticas, seguras y personalizadas que ayuden a optimizar la gestión, las ventas y los procesos de cada negocio.
+          </p>
+        </div>
+
+        <div class="about-cards" data-aos="fade-left">
+          <div class="floating-card" data-float="1">
+            <div class="card-icon">🎯</div>
+            <h4>Misión</h4>
+            <p>Diseñar y desarrollar soluciones tecnológicas innovadoras y accesibles que impulsen la digitalización de pequeñas y medianas empresas, ayudándolas a mejorar su productividad y competitividad.</p>
+          </div>
+
+          <div class="floating-card" data-float="2">
+            <div class="card-icon">🚀</div>
+            <h4>Visión</h4>
+            <p>Ser una empresa líder en desarrollo de software en Colombia, reconocida por su calidad, creatividad e impacto positivo en la transformación digital de las PYMES.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CEO SECTION -->
+  <section id="ceo" class="ceo-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Nuestro Líder</h2>
+      
+      <div class="ceo-card" data-aos="zoom-in">
+        <div class="ceo-image">
+          <img src="fotoceo2.png" alt="George Bratt Díaz - CEO" class="ceo-photo" />
+          <div class="image-glow"></div>
+        </div>
+
+        <div class="ceo-info">
+          <h2 class="ceo-name">George Bratt Díaz Castañeda</h2>
+          <h4 class="ceo-title">Tecnólogo - SENA</h4>
+          <h4 class="ceo-role">CEO & Fundador de AdaptiSoft</h4>
+          <p class="ceo-bio">
+            Apasionado por la tecnología y el desarrollo de software. Mi objetivo es ayudar a las empresas a crecer mediante soluciones digitales innovadoras, modernas y sostenibles, fomentando oportunidades para nuevos talentos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contacto">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Contáctanos</h2>
+      <p class="section-subtitle" data-aos="fade-up">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+
+      <form action="https://formsubmit.co/adaptisoft@gmail.com" method="POST" class="contact-form" data-aos="fade-up">
+        <div class="form-group">
+          <input type="text" name="nombre" placeholder="Tu nombre" required class="form-input" />
+          <span class="input-border"></span>
+        </div>
+
+        <div class="form-group">
+          <input type="email" name="correo" placeholder="Tu correo electrónico" required class="form-input" />
+          <span class="input-border"></span>
+        </div>
+
+        <div class="form-group">
+          <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto" rows="5" required class="form-input"></textarea>
+          <span class="input-border"></span>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          <span>Enviar Mensaje</span>
+          <span class="btn-icon"></span>
+        </button>
+
+        <input type="hidden" name="_captcha" value="false">
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <!-- LOGO EN FOOTER -->
+        <div class="footer-logo-container">
+          <img src="Logo.png" alt="Logo AdaptiSoft" class="footer-logo" />
+        </div>
+        
+        <div class="social-links">
+          <a href="https://www.tiktok.com/@adaptisoft?_t=ZS-90yGSQeOQo4&_r=1" class="social-link" aria-label="TikTok">TikTok</a>
+          <a href="https://www.instagram.com/adaptisoft?igsh=ZTVjaXIxaDV1MWx5" class="social-link" aria-label="Instagram">Instagram</a>
+          <a href="mailto:adaptisoft@gmail.com" class="social-link">Correo</a>
+        </div>
+        <p class="footer-copyright">&copy; 2025 AdaptiSoft. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
